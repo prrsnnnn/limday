@@ -1,0 +1,6 @@
+telebot
+requests
+pymongo
+random
+telebot.apihelper
+config
