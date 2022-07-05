@@ -5,10 +5,9 @@ mongo = MongoClient(mongo_token, port=27017)
 telebot = mongo["Telegrambot"]
 settings=telebot['Settings']
 while True:
-    if time.localtime().tm_hour ==20  and time.localtime().tm_min == 20 and time.localtime().tm_sec == 15:
+    if time.localtime().tm_hour ==0  and time.localtime().tm_min == 0 and time.localtime().tm_sec == 0:
         #print(time.localtime().tm_hour, time.localtime().tm_min, time.localtime().tm_sec)
         for l in settings.find({}, {'out': 1}):
             settings.update_one({'out': l['out']}, {"$set": {'day': 0}})
-            print(1)
             break
         time.sleep(1)
